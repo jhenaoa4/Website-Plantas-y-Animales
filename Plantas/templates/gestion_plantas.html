@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- CORRA CON -->
+<!-- python manage.py runserver -->
+
+{# Comentario #}
+{% extends "container.html" %}
+
+{% block title %} Plantas {% endblock %}
+
+{% block content %}
+	<div class="container ">
+		<h1 class="text-primary text-center">Usuario Investigador</h1>
+	</div>
+	<div class="row p-3">
+		<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Ingresar Plantas</h5>
+					<p class="card-text">Ingresa una planta a la base de datos</p>
+					<form action="crear-planta/" method="POST">{% csrf_token %}
+						 <div class="form-group my-2">
+							<input type="text" id="txtEspecie" name="txtEspecie" class="form-control" placeholder="Especie" minlength="2" maxlength="40" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="text" id="txtFamilia" name="txtFamilia" class="form-control" placeholder="Familia" minlength="2" maxlength="40" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="text" id="txtGenero" name="txtGenero" class="form-control" placeholder="Genero" minlength="2" maxlength="40" required>
+						 </div>
+						 <div class="form-group my-2">
+							<input type="text" id="txtLocalidad" name="txtLocalidad" class="form-control" placeholder="Localidad" minlength="2" maxlength="40" required>
+						 </div>
+						 <div class="form-group my-2">
+							<input type="text" id="txtPais" name="txtPais" class="form-control" placeholder="Pais" minlength="2" maxlength="40" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="number" id="txtLatitud" name="txtLatitud" class="form-control" placeholder="latitud" step="0.0001" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="number" id="txtLongitud" name="txtLongitud" class="form-control" placeholder="longitud" step="0.0001" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="text" id="txtUnidades" name="txtUnidades" class="form-control" placeholder="Unidades de medida" minlength="1" maxlength="40" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="number" id="txtMedidas" name="txtMedidas" class="form-control" placeholder="Medidas" minlength="2" maxlength="40" required>
+						 </div>
+                         <div class="form-group my-2">
+							<input type="text" id="txtTipo" name="txtTipo" class="form-control" placeholder="Tipo" minlength="2" maxlength="40" required>
+						 </div>
+						 <div class="form-group my-2">
+							<input type="text" id="txtImportancia" name="txtImportancia" class="form-control" placeholder="Importancia" minlength="2" maxlength="40" required>
+						 </div>
+						 <div class="form-group my-2">
+							<input type="date" id="txtFecha" name="txtFecha" class="form-control" placeholder="fecha_coleccion" minlength="2" maxlength="40" required>
+						 </div>
+						 <div class="form-group my-2">
+							<button type="submit" class="btn btn-primary btn-block">Guardar</button>
+						 </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+			<div class="container bg-light border border-dark rounded p-3">
+				<div class="table-responsive">
+				  <table class="table table-stripped">
+					<thead>
+						<tr>
+							<th>Especie</th>
+                            <th>Familia</th>
+                            <th>G&eacute;nero</th>
+							<th>Localidad</th>
+                            <th>Medidas</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for planta in plantas %}
+							<tr>
+								<td>{{ planta.especie }}</td>
+                                <td>{{ planta.familia }}</td>
+                                <td>{{ planta.genero }}</td>
+								<td>{{ planta.locacion }}</td>
+                                <td>{{ planta.medidas }} {{ planta.unidades_medida }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				  </table>
+			  </div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

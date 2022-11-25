@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- CORRA CON -->
+<!-- python manage.py runserver -->
+
+{# Comentario #}
+
+<html lang="en">
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<title>{% block title %} {% endblock %}</title>
+	
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+ 
+	<!-- <link type='text/css' href='{% static "css/header_tmpl.css" %}' rel="stylesheet"/> -->
+	<link rel="stylesheet" href='{% static "scss/custom.css" %}'>
+	<!-- <link href='{% static "scss/carousel.css" %}' rel="stylesheet"> -->
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+</head>
+<body>
+	{% include 'header.html' %}
+	<div>
+	<!-- <div class="container my-0 mx-12 px-5 py-2"> -->
+		<!-- <h1>Meta Ranking</h1> -->
+		
+		{% block content %}
+		
+		{% endblock %}
+		<!-- <p>pie de pagina</p> -->
+		<footer class="text-center text-lg-start bg-light text-muted my-2">
+			<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+		    © 2022 Copyright: Smithsonian. All rights reserved
+  			</div>
+		</footer>
+	<!-- </div> -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+	<script type="text/javascript", src = '{% static "js/index.js" %}'></script>
+	
+</div>
+</body>
+</html>

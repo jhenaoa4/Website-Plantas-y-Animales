@@ -1,0 +1,31 @@
+{% extends "container.html" %}
+{% load static %}
+<!DOCTYPE html>
+<!-- CORRA CON -->
+<!-- python manage.py runserver -->
+<!-- /inicio -->
+
+
+
+{% block title %} Inicio {% endblock %}
+
+{% block content %}
+<!-- <main role="main"> -->
+
+
+<!-- <div class="container text-primary"> -->
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-5">  
+      <h1 class="text-primary">Ingresa como invitado</h1>
+      <p><a class="btn btn-lg btn-primary my-3" href="/invitados/" role="button">Ingresa un animal</a></p>
+  </div>
+
+<!-- <div class="container text-primary bg-dark"> -->
+  <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 bg-dark p-5"> 
+      <h1 class="text-light">Ingresa como investigador</h1>
+      <p><a class="btn btn-lg btn-primary my-3" href="/investigadores/" role="button">Ingresa una planta</a></p>
+  </div>
+</div>
+
+
+{% endblock %}
