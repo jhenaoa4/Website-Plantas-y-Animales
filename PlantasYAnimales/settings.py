@@ -57,7 +57,7 @@ ROOT_URLCONF = 'PlantasYAnimales.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/PIRLO/Documents/PlantasYAnimales/PlantasYAnimales/templates/'],
+        'DIRS': ['C:/PlantasYAnimales/PlantasYAnimales/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
